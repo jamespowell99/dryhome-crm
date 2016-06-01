@@ -179,7 +179,6 @@ dependencies {
     }
     
     compile "mysql:mysql-connector-java"
-    compile "com.h2database:h2"
     compile "fr.ippon.spark.metrics:metrics-spark-reporter:${metrics_spark_reporter_version}"
     compile "org.mapstruct:mapstruct-jdk8:${mapstruct_version}"
     testCompile "com.jayway.awaitility:awaitility:${awaility_version}"
@@ -195,6 +194,7 @@ dependencies {
     
     testCompile "io.gatling.highcharts:gatling-charts-highcharts:${gatling_version}"
     
+    testCompile "com.h2database:h2"
     optional "org.springframework.boot:spring-boot-configuration-processor:${spring_boot_version}"
     //jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
 }

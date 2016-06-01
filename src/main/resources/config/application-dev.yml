@@ -18,16 +18,19 @@ spring:
         livereload:
             enabled: false # we use gulp + BrowserSync for livereload
     datasource:
-        url: jdbc:h2:file:./target/h2db/db/dryhomecrm;DB_CLOSE_DELAY=-1
+        url: jdbc:mysql://localhost:3306/dryhomecrm?useUnicode=true&characterEncoding=utf8&useSSL=false
         name:
-        username: dryhomecrm
+        username: root
         password:
-    h2:
-        console:
-            enabled: false
+        hikari:
+            data-source-properties:
+                cachePrepStmts: true
+                prepStmtCacheSize: 250
+                prepStmtCacheSqlLimit: 2048
+                useServerPrepStmts: true
     jpa:
-        database-platform: uk.co.powtech.dryhomecrm.domain.util.FixedH2Dialect
-        database: H2
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        database: MYSQL
         show_sql: true
         properties:
             hibernate.cache.use_second_level_cache: true

@@ -14,11 +14,11 @@ task liquibaseDiffChangelog(dependsOn: compileJava, type: JavaExec) {
     main = "liquibase.integration.commandline.Main"
 
     args "--changeLogFile=src/main/resources/config/liquibase/changelog/" + buildTimestamp() +"_changelog.xml"
-    args "--referenceUrl=hibernate:spring:uk.co.powtech.dryhomecrm.domain?dialect=org.hibernate.dialect.H2Dialect&hibernate.ejb.naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy"
-    args "--username=dryhomecrm"
+    args "--referenceUrl=hibernate:spring:uk.co.powtech.dryhomecrm.domain?dialect=org.hibernate.dialect.MySQL5InnoDBDialect&hibernate.ejb.naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy"
+    args "--username=root"
     args "--password="
-    args "--url=jdbc:h2:file:./target/h2db/db/dryhomecrm"
-    args "--driver=org.h2.Driver"
+    args "--url=jdbc:mysql://localhost:3306/dryhomecrm"
+    args "--driver=com.mysql.jdbc.Driver"
     args "diffChangeLog"
     
 }
