@@ -1,0 +1,10 @@
+version: '2'
+services:
+    dryhomecrm-elasticsearch:
+        container_name: dryhomecrm-elasticsearch
+        image: elasticsearch:1.7.5
+        # volumes:
+        #     - ~/volumes/jhipster/dryhomecrm/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300
